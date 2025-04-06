@@ -1,0 +1,15 @@
+services:
+  database:
+    image: postgres
+    container_name: local-postgres
+    hostname: localhost
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    volumes:
+      - authentication_pgdata:/var/lib/postgresql/data
+volumes:
+  authentication_pgdata:
